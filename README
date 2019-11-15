@@ -1,0 +1,6 @@
+go to https://nodejs.org/en/download/
+click to download the windows installer msi file
+open the file to start the installer
+I used all the defaults and checked the box to include extra things like Chocolatey
+once the node installation finished it popped up a cmd line windows to install all the extras. 
+possibly this is not necessary. if someone tries without please update this Readme
