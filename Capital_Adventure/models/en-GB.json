@@ -1,0 +1,157 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "capital adventure",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CaptureLocationIntent",
+          "slots": [
+            {
+              "name": "Location",
+              "type": "AMAZON.Country"
+            }
+          ],
+          "samples": [
+            "I'm in the {Location}",
+            "{Location}",
+            "I'm in {Location}"
+          ]
+        },
+        {
+          "name": "AMAZON.StartOverIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.RepeatIntent",
+          "samples": []
+        },
+        {
+          "name": "AnswerIntent",
+          "slots": [
+            {
+              "name": "Answer",
+              "type": "AMAZON.Language"
+            }
+          ],
+          "samples": [
+            "it's {Answer}",
+            "{Answer}",
+            "the answer is {Answer}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CaptureLocationIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "Location",
+              "type": "AMAZON.Country",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.291169793444.256636704267"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.857055600347.365271433169.1447739789810",
+                  "values": [
+                    "France",
+                    "Germany"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AnswerIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "Answer",
+              "type": "AMAZON.Language",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1518287281875.1225485477097"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.291169793444.256636704267",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What country are you in?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.531052430103.1027719668501.163553252998",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "your answer can be a, b or c"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.531052430103.1027719668501",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "when you're ready say the answer is followed by the letter"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1518287281875.1225485477097",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "when you're ready say the answer is and then a, b or c"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.857055600347.365271433169.1447739789810",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "You can only travel to places on the Capital Adventure board. Where are you now?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "8"
+}
